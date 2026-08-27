@@ -1,0 +1,24 @@
+# SQLite Database Files
+*.db
+*.sqlite
+*.sqlite3
+placement_tracker.db
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Environment Variables & Secrets
+.env
+.streamlit/secrets.toml
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+.DS_Store
