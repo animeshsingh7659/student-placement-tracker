@@ -104,3 +104,29 @@ def fetch_all_applications():
     df = pd.read_sql_query(query, conn)
     conn.close()
     return df
+
+
+def get_application_metrics():
+    """Calculates summary counts for total and status-specific applications dynamically from SQLite."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT 
+            COUNT(*) AS total,
+            SUM(CASE WHEN status = 'Applied' THEN 1 ELSE 0 END) AS applied,
+            SUM(CASE WHEN status = 'Shortlisted' THEN 1 ELSE 0 END) AS shortlisted,
+            SUM(CASE WHEN status = 'Interview' THEN 1 ELSE 0 END) AS interview,
+            SUM(CASE WHEN status = 'Selected' THEN 1 ELSE 0 END) AS selected,
+            SUM(CASE WHEN status = 'Rejected' THEN 1 ELSE 0 END) AS rejected
+        FROM applications
+    """)
+    row = cursor.fetchone()
+    conn.close()
+    return {
+        "total": row[0] if row and row[0] is not None else 0,
+        "applied": row[1] if row and row[1] is not None else 0,
+        "shortlisted": row[2] if row and row[2] is not None else 0,
+        "interview": row[3] if row and row[3] is not None else 0,
+        "selected": row[4] if row and row[4] is not None else 0,
+        "rejected": row[5] if row and row[5] is not None else 0
+    }
