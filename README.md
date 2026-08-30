@@ -60,11 +60,10 @@ The dashboard includes:
 
 ## 📁 Project Structure
 
-https://student-placement-tracker.streamlit.app/
+student-placement-tracker/
 │
 ├── app.py
 ├── database.py
 ├── requirements.txt
 ├── README.md
-├── .gitignore
-└── placement_tracker.db
+└── .gitignore
