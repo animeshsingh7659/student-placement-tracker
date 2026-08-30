@@ -67,3 +67,27 @@ student-placement-tracker/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+
+## 🌐 Live Demo
+
+Try the live application:
+
+[**Launch Student Placement Tracker**]:(https://student-placement-tracker.streamlit.app/)
+
+## 📸 Screenshots
+
+### 📊 Dashboard
+
+![Dashboard](screenshots/dashboard.png.jpeg)
+
+### ➕ Add Application
+
+![Add Application](screenshots/add-applications.png.jpeg)
+
+### 📋 Application Records
+
+![Application Records](screenshots/application-records.png.jpeg)
+
+### 📈 Placement Analytics
+
+![Placement Analytics](screenshots/analytics.png.jpeg)
